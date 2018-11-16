@@ -139,7 +139,14 @@ static int op_quotient(struct tokenStack *stack)
 
   v1 = popInt(stack);
   v2 = popInt(stack);
-  pushInt(stack, v2/v1);
+  if(v1==0)
+  {
+   printf("Cannot divide by zero");
+  }
+	else
+	{
+	pushInt(stack, v2/v1);
+	}
   return(0);
 }
 
